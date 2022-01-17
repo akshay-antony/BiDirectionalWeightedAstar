@@ -132,7 +132,7 @@ void trace_path(std::map<std::pair<float,float>,std::vector<float>>& all_points_
 int main(int argc, char* argv[]){
     // gp::start_point.first = std::atof(argv[1]);
     // gp::start_point.second = std::atof(argv[2]);
-    if(argc == 5){
+    if(argc == 8){
         gp::goal_point.first = std::atof(argv[1]);
         gp::goal_point.second = std::atof(argv[2]);
         gp::start_point.first = std::atof(argv[3]);
