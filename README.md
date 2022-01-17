@@ -13,3 +13,11 @@ Bi-directional weighted A* planning algorithm written in C++ using multi-threadi
  $ g++ -std=c++11 -pthread  main.cpp -o x 
  $ ./x 1 1 300 300 1.1 
   ```
+Using cmake
+```
+$ mkdir build
+$ cd build/
+$ cmake ../
+$ make
+$ ./result 
+```
