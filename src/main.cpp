@@ -133,11 +133,13 @@ int main(int argc, char* argv[]){
     // gp::start_point.first = std::atof(argv[1]);
     // gp::start_point.second = std::atof(argv[2]);
     if(argc == 5){
-        gp::goal_point.first = std::atof(argv[3]);
-        gp::goal_point.second = std::atof(argv[4]);
-        gp::start_point.first = std::atof(argv[1]);
-        gp::start_point.second = std::atof(argv[2]);
-        gp::w = std::atof(argv[5]);
+        gp::goal_point.first = std::atof(argv[1]);
+        gp::goal_point.second = std::atof(argv[2]);
+        gp::start_point.first = std::atof(argv[3]);
+        gp::start_point.second = std::atof(argv[4]);
+        gp::height = std::atof(argv[5]);
+        gp::width = std::atof(argv[6]);
+        gp::w = std::atof(argv[7]);
     }
     auto start_time = std::chrono::high_resolution_clock::now();
     std::vector<std::pair<int,int>> input_obstacles;
@@ -169,6 +171,7 @@ int main(int argc, char* argv[]){
     std::thread t2(plan, std::ref(all_points_bwd), std::ref(open_points_bwd), std::ref(closed_points_bwd), false);
     t1.join();
     t2.join();
+
     if(gp::found)
         trace_path(all_points_fwd, all_points_bwd);
     else
